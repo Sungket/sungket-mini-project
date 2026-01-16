@@ -1,4 +1,4 @@
-table, tr, td {
+/* table, tr, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -9,4 +9,30 @@ table {
 
 tr {
   height: 200px;
+} */
+
+#box {
+  width: 100px;
+  height: 100px;
+  border-color: black;
+  border-style: solid;
 }
+
+/* <!--
+Source - https://stackoverflow.com/a
+Posted by Ruddy, modified by community. See post 'Timeline' for change history
+Retrieved 2026-01-15, License - CC BY-SA 3.0
+--> */
+
+div {
+    width: 300px;
+    height: 600px;
+}
+
+div div {
+    width: 100px;
+    height: 100px;
+    outline: 1px solid;
+    float: left;
+}
+
