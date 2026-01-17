@@ -22,8 +22,9 @@ const divs = document.querySelectorAll(".box");
 divs.forEach((div) => {
     div.addEventListener("click", () => {
         console.log(div.id);
+        div.innerHTML = "X";
     })
-})
+});
 
 box.addEventListener("mouseover", () => {
     box.style.backgroundColor = "red";

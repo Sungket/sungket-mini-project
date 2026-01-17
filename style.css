@@ -1,16 +1,3 @@
-/* table, tr, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-table {
-  width: 600px;
-}
-
-tr {
-  height: 200px;
-} */
-
 #box {
   width: 100px;
   height: 100px;
@@ -34,6 +21,9 @@ div div {
     height: 100px;
     outline: 1px solid;
     float: left;
+    text-align: center;
+    align-content: center;
+    font-size: 2.5em;
 }
 
 .box:hover {
