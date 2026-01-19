@@ -23,30 +23,18 @@ function run() {
 
     let currentPlayer = "O";
 
-    let count = 10;
+    divs.forEach((div) => {
+        div.addEventListener("click", () => {
+            console.log(div.id);
+            div.innerHTML = currentPlayer;
 
-    
-        if (currentPlayer === "O") {
-            divs.forEach((div) => {
-                div.addEventListener("click", () => {
-                console.log(div.id);
-                div.innerHTML = "O";
-                console.log(gameboard);
+            if (currentPlayer == "O") {
                 currentPlayer = "X";
-                })
-            })
-        } else {
-            divs.forEach((div) => {
-                div.addEventListener("click", () => {
-                console.log(div.id);
-                div.innerHTML = "X";
-                console.log(gameboard);
+            } else {
                 currentPlayer = "O";
-                })
-            })
-        }
-        count++;
-    
+            }
+        });
+    });
 }
 
 run();
@@ -55,12 +43,4 @@ run();
 //     //8 distinct winning conditions, which can be hardcoded in
     
 // }
-
-box.addEventListener("mouseover", () => {
-    box.style.backgroundColor = "red";
-});
-
-box.addEventListener("mouseout", () => {
-    box.style.backgroundColor = "white";
-});
 
