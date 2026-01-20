@@ -46,25 +46,6 @@ function run() {
                     currentPlayer = "O";
                 }
             }
-
-
-            // console.log(div.id);
-            // div.innerHTML = currentPlayer;
-            // if (currentPlayer == "O") {
-            //     playerOTurnList.push(div.id);
-            // } else {
-            //     playerXTurnList.push(div.id);
-            // }
-
-            // checkWin(playerOTurnList);
-            // checkWin(playerXTurnList);
-
-            // //switch player
-            // if (currentPlayer == "O") {
-            //     currentPlayer = "X";
-            // } else {
-            //     currentPlayer = "O";
-            // }
         });
     });
 }
@@ -76,7 +57,17 @@ function checkWin(array) {
     //8 distinct winning conditions, which can be hardcoded in
     //123, 456, 678, 147, 258, 369, 159, 357
     //needs to be done after 3 turns have elapsed for the first player
+    //use a for-loop to check each element in each array to be compared to, and then see if Array A contains the 
+    //same elements as Array B (but not in necessarily in the same order)
+    //compare the current array to each winning array??
     console.log(array);
-
+    win1 = [1,2,3];
+    win2 = [4,5,6];
+    win3 = [6,7,8];
+    win4 = [1,4,7];
+    win5 = [2,5,8];
+    win6 = [3,6,9];
+    win7 = [1,5,9];
+    win8 = [3,5,7];
 }
 
