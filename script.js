@@ -50,7 +50,6 @@ function run() {
     });
 }
 
-
 run();
 
 function checkWin(array) {
@@ -69,5 +68,18 @@ function checkWin(array) {
     win6 = [3,6,9];
     win7 = [1,5,9];
     win8 = [3,5,7];
-}
 
+    if (array.length > 2) {
+        for (let i = 0; i < array.length; i++) {
+        // the turn list arrays are getting inserted
+        array.sort;
+        console.log(`win1 array = ${array[i]}`);
+            for (let j = 0; j < win1.length; j++) {
+            if (array[j] !== win1[j]) {
+            console.log(false); // Found a different number
+            }
+        }
+        console.log("we have a winner"); // All numbers matched
+        }
+    }
+}
