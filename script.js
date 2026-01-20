@@ -27,23 +27,44 @@ function run() {
 
     divs.forEach((div) => {
         div.addEventListener("click", () => {
-            console.log(div.id);
-            div.innerHTML = currentPlayer;
-            if (currentPlayer == "O") {
-                playerOTurnList.push(div.id);
-            } else {
-                playerXTurnList.push(div.id);
+            if (div.innerHTML == "") {
+                console.log(div.id);
+                div.innerHTML = currentPlayer;
+                if (currentPlayer == "O") {
+                    playerOTurnList.push(div.id);
+                } else {
+                    playerXTurnList.push(div.id);
+                }
+
+                checkWin(playerOTurnList);
+                checkWin(playerXTurnList);
+
+                //switch player
+                if (currentPlayer == "O") {
+                    currentPlayer = "X";
+                } else {
+                    currentPlayer = "O";
+                }
             }
 
-            checkWin(playerOTurnList);
-            checkWin(playerXTurnList);
 
-            //switch player
-            if (currentPlayer == "O") {
-                currentPlayer = "X";
-            } else {
-                currentPlayer = "O";
-            }
+            // console.log(div.id);
+            // div.innerHTML = currentPlayer;
+            // if (currentPlayer == "O") {
+            //     playerOTurnList.push(div.id);
+            // } else {
+            //     playerXTurnList.push(div.id);
+            // }
+
+            // checkWin(playerOTurnList);
+            // checkWin(playerXTurnList);
+
+            // //switch player
+            // if (currentPlayer == "O") {
+            //     currentPlayer = "X";
+            // } else {
+            //     currentPlayer = "O";
+            // }
         });
     });
 }
