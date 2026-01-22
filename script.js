@@ -60,26 +60,31 @@ function checkWin(array) {
     //same elements as Array B (but not in necessarily in the same order)
     //compare the current array to each winning array??
     console.log(array);
-    win1 = [1,2,3];
-    win2 = [4,5,6];
-    win3 = [6,7,8];
-    win4 = [1,4,7];
-    win5 = [2,5,8];
-    win6 = [3,6,9];
-    win7 = [1,5,9];
-    win8 = [3,5,7];
+
+    let winningCombos = [
+        [1,2,3], [4,5,6], [6,7,8], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]
+    ];
 
     if (array.length > 2) {
-        for (let i = 0; i < array.length; i++) {
-        // the turn list arrays are getting inserted
-        array.sort;
-        console.log(`win1 array = ${array[i]}`);
-            for (let j = 0; j < win1.length; j++) {
-            if (array[j] !== win1[j]) {
-            console.log(false); // Found a different number
+    // the turn list arrays are getting inserted
+    array.sort;
+
+        
+    //loop through the wins arrays
+        for (let h = 0; h < array.length; h++){
+            // console.log(winningCombos[h]);
+            for (let i = 0; i < winningCombos.length; i++) {
+                let count = 0;
+                for (let j = 0; j < 3; j++) {
+                    if (array[j] == winningCombos[i][j]) {
+                        count++;
+                    }
+                    if (count == 3) {
+                        console.log(`We have a win! ${array} contains the winning combo of ${winningCombos[h]}`);
+                        break;
+                    }
+                }
             }
-        }
-        console.log("we have a winner"); // All numbers matched
         }
     }
 }
