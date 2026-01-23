@@ -52,39 +52,53 @@ function run() {
 
 run();
 
-function checkWin(array) {
-    //8 distinct winning conditions, which can be hardcoded in
-    //123, 456, 678, 147, 258, 369, 159, 357
-    //needs to be done after 3 turns have elapsed for the first player
-    //use a for-loop to check each element in each array to be compared to, and then see if Array A contains the 
-    //same elements as Array B (but not in necessarily in the same order)
-    //compare the current array to each winning array??
-    console.log(array);
-
-    let winningCombos = [
+function checkWin(turnList) {
+    //compare the turnlist with each winning combo
+    const winningCombos = [
         [1,2,3], [4,5,6], [6,7,8], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]
     ];
 
-    if (array.length > 2) {
+    if (turnList.length > 2) {
     // the turn list arrays are getting inserted
-    array.sort;
+    turnList.sort;
+    console.log("Hit");
+
+    winningCombos.forEach(combo => {
+        let count = 0;
+        //console.log(combo);
+        combo.forEach(element => {
+            console.log(element);
+            if(turnList.includes(element)) {
+                count++
+                console.log(count);
+            }
+        })
+        if (count == 3) {
+            console.log("We have a winner");
+            
+        }
+    }
+    )
+    
+    //return combos.some(combo => combo.every(cell => turnList.includes(cell)));
+
 
         
     //loop through the wins arrays
-        for (let h = 0; h < array.length; h++){
-            // console.log(winningCombos[h]);
-            for (let i = 0; i < winningCombos.length; i++) {
-                let count = 0;
-                for (let j = 0; j < 3; j++) {
-                    if (array[j] == winningCombos[i][j]) {
-                        count++;
-                    }
-                    if (count == 3) {
-                        console.log(`We have a win! ${array} contains the winning combo of ${winningCombos[h]}`);
-                        break;
-                    }
-                }
-            }
-        }
+        // for (let h = 0; h < array.length; h++){
+        //     // console.log(winningCombos[h]);
+        //     for (let i = 0; i < winningCombos.length; i++) {
+        //         let count = 0;
+        //         for (let j = 0; j < 3; j++) {
+        //             if (array[j] == winningCombos[i][j]) {
+        //                 count++;
+        //             }
+        //             if (count == 3) {
+        //                 console.log(`We have a win! ${array} contains the winning combo of ${winningCombos[h]}`);
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
