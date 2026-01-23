@@ -48,7 +48,10 @@ function run() {
     });
 }
 
-run();
+const start = document.querySelector("#start");
+start.addEventListener("click", run);
+
+//run();
 
 function checkWin(turnList) {
     //compare the turnlist with each winning combo
