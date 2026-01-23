@@ -69,6 +69,7 @@ function checkWin(turnList) {
             if (count == 3) {
                 console.log("We have a winner");
                 win = true;
+                winMessage(win);
                 return;
             }
         }
@@ -76,7 +77,9 @@ function checkWin(turnList) {
     }
 }
 
-if (win == true) {
-
+function winMessage(win) {
+    if (win) {        
+        const message = document.getElementById("winMessage");
+        message.innerHTML = "We have a winner!";
+    }
 }
-
