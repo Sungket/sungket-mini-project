@@ -18,7 +18,6 @@ buildGameboard();
 
 //game loop
 function run() {
-    console.log("lets go");
     const divs = document.querySelectorAll(".box");
 
     let currentPlayer = "O";
@@ -28,7 +27,6 @@ function run() {
     divs.forEach((div) => {
         div.addEventListener("click", () => {
             if (div.innerHTML == "") {
-                console.log(div.id);
                 div.innerHTML = currentPlayer;
                 if (currentPlayer == "O") {
                     playerOTurnList.push(parseInt(div.id));
@@ -59,21 +57,13 @@ function checkWin(turnList) {
     ];
 
     if (turnList.length > 2) {
-    // the turn list arrays are getting inserted
-    turnList.sort;
-    //console.log("Hit");
+        turnList.sort;
 
         winningCombos.forEach(combo => {
             let count = 0;
-            console.log(combo);
-            console.log(turnList);
             combo.forEach(element => {
-                //console.log(element);
-                console.log(count);
                 if(turnList.includes(element)) {
-                    console.log("true");
                     count++
-                    console.log(count);
                 }
             })
             if (count == 3) {
