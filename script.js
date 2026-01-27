@@ -34,8 +34,8 @@ function run() {
                     playerXTurnList.push(parseInt(div.id));
                 }
 
-                checkWin(playerOTurnList);
-                checkWin(playerXTurnList);
+                checkWin(playerOTurnList, "O");
+                checkWin(playerXTurnList, "X");
 
                 //switch player
                 if (currentPlayer == "O") {
@@ -51,9 +51,10 @@ function run() {
 const start = document.querySelector("#start");
 start.addEventListener("click", run);
 
-//run();
+const reset = document.querySelector('#reset');
+reset.addEventListener("click", location.reload);
 
-function checkWin(turnList) {
+function checkWin(turnList, player) {
     //compare the turnlist with each winning combo
     const winningCombos = [
         [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]
@@ -72,17 +73,18 @@ function checkWin(turnList) {
             if (count == 3) {
                 console.log("We have a winner");
                 win = true;
-                winMessage(win);
+                winMessage(win, player);
                 return;
             }
+            //check draw condition
         }
         )
     }
 }
 
-function winMessage(win) {
+function winMessage(win, player) {
     if (win) {        
         const message = document.getElementById("winMessage");
-        message.innerHTML = "We have a winner!";
+        message.innerHTML = `Player ${player} wins!`;
     }
 }
