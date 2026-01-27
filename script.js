@@ -67,7 +67,7 @@ function checkWin(turnList, player) {
             let count = 0;
             combo.forEach(element => {
                 if(turnList.includes(element)) {
-                    count++
+                    count++;
                 }
             })
             if (count == 3) {
