@@ -7,12 +7,14 @@ function buildGameboard() {
     for (let i = 0; i < rows; i++) {
         gameboard[i] = [];
         for (let j = 0; j < cols; j++) {
-            gameboard[i][j] = ["."];
+            gameboard[i][j] = [""];
         }
     }
 }
 
 let win = false;
+let playerOTurnList = [];
+let playerXTurnList = [];
 
 buildGameboard();
 
@@ -21,8 +23,8 @@ function run() {
     const divs = document.querySelectorAll(".box");
 
     let currentPlayer = "O";
-    let playerOTurnList = [];
-    let playerXTurnList = [];
+    // let playerOTurnList = [];
+    // let playerXTurnList = [];
 
     divs.forEach((div) => {
         div.addEventListener("click", () => {
@@ -52,7 +54,7 @@ const start = document.querySelector("#start");
 start.addEventListener("click", run);
 
 const reset = document.querySelector('#reset');
-reset.addEventListener("click", location.reload);
+reset.addEventListener("click", resetBoard);
 
 function checkWin(turnList, player) {
     //compare the turnlist with each winning combo
@@ -71,7 +73,6 @@ function checkWin(turnList, player) {
                 }
             })
             if (count == 3) {
-                console.log("We have a winner");
                 win = true;
                 winMessage(win, player);
                 return;
@@ -87,4 +88,15 @@ function winMessage(win, player) {
         const message = document.getElementById("winMessage");
         message.innerHTML = `Player ${player} wins!`;
     }
+}
+
+
+function resetBoard() {
+    console.log("reset button pressed");
+    playerOTurnList = []
+    playerXTurnList = []
+    const divs = document.querySelectorAll(".box");
+    divs.forEach((div) => {
+        div.innerHTML = "";
+    })
 }
