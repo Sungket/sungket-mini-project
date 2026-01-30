@@ -117,5 +117,5 @@ function winCount(player) {
         OWins++;
     } else if (player == "X") {
         XWins++;
-    }
+    };
 }
