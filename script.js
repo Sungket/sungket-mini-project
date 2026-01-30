@@ -23,8 +23,6 @@ function run() {
     const divs = document.querySelectorAll(".box");
 
     let currentPlayer = "O";
-    // let playerOTurnList = [];
-    // let playerXTurnList = [];
 
     divs.forEach((div) => {
         div.addEventListener("click", () => {
@@ -78,18 +76,28 @@ function checkWin(turnList, player) {
                 return;
             }
             //check draw condition
+            console.log(gameboard);
+            if (win == false && turnList.length > 4) {
+                winMessage(win, player);
+            }
         }
         )
     }
 }
 
 function winMessage(win, player) {
+    const message = document.getElementById("winMessage");
     if (win) {        
-        const message = document.getElementById("winMessage");
         message.innerHTML = `Player ${player} wins!`;
+        winCount(player);
+    } else {
+        message.innerHTML = `Its a draw!`;
+    }
+    //reset condition - clear message
+    if (!win && player == false) {
+        message.innerHTML = "";
     }
 }
-
 
 function resetBoard() {
     console.log("reset button pressed");
@@ -99,4 +107,15 @@ function resetBoard() {
     divs.forEach((div) => {
         div.innerHTML = "";
     })
+    winMessage(false, false);
+}
+
+function winCount(player) {
+    const OWins = 0;
+    const XWins = 0;
+    if (player == "O") {
+        OWins++;
+    } else if (player == "X") {
+        XWins++;
+    }
 }
